@@ -12,8 +12,8 @@ const ShopCart = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <div>
+    <div className="flex flex-nowrap content-center justify-between bg-sky-50 p-4 border-2 mb-6 rounded-md">
+      <div >
         {state.selectedItems.map((item) => (
           <Cart key={item.id} data={item} />
         ))}

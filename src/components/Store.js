@@ -13,22 +13,18 @@ const Store = () => {
     if (!productsState.products.length) dispatch(fetchProducts());
   }, [dispatch, productsState.products.length]);
   return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "space-between",
-      }}
-    >
-      {productsState.loading ? (
-        <h2>Loading ...</h2>
-      ) : productsState.error ? (
-        <p>Something went wrong</p>
-      ) : (
-        productsState.products.map((product) => (
-          <Product key={product.id} productData={product} />
-        ))
-      )}
+    <div >
+      <div className="flex flex-wrap content-between justify-center ">
+        {productsState.loading ? (
+          <h2>Loading ...</h2>
+        ) : productsState.error ? (
+          <p>Something went wrong</p>
+        ) : (
+          productsState.products.map((product) => (
+            <Product key={product.id} productData={product} />
+          ))
+        )}
+      </div>
     </div>
   );
 };

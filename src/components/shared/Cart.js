@@ -13,11 +13,11 @@ const Cart = (props) => {
   const dispatch = useDispatch();
   const { image, title, price, quantity } = props.data;
   return (
-    <div>
-      <img src={image} alt={title} />
+    <div className="flex flex-col">
+      <img src={image} alt={title} className="w-64 p-1 m-1 " />
       <div>
-        <h3>{shorten(title)}</h3>
-        <p>{price} $</p>
+        <h3 className="font-bold text-xl m-1 p-1">{shorten(title)}</h3>
+        <p className=" w-fit text-center p-1 font-bold text-lg mt-1 mb-2 text-green-600 ml-1">{price} $</p>
         <div>
           <span>{quantity}</span>
         </div>
